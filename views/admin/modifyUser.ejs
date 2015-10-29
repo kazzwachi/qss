@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>User Modification Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header><% include ../_header %></header>
+    <nav></nav>
+    <section class="page_title">
+      <h1>User Modification Page</h1>
+    </section>
+    <section class="messages">
+      <% include ../_messages %>
+    </section>
+    <section class="contents">
+      <% if(!hasError){ %>
+        <form action="/admin/modifyUser?username=<%=username%>" method="post">
+          <h2>User Name</h2>
+          <table>
+            <tr>
+              <td><label for="username">User Name:</label></td>
+              <td><span name="username"><%=username%></span></td>
+            </tr>
+          </table>
+          <h2>User Info</h2>
+          <% include _userInfoTable%>
+          <input type="submit" value="submit">
+        </form>
+      <% } %>
+    </section>
+  </body>
+</html>

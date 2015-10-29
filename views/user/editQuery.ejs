@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Query Edit Form</title>
+  </head>
+  <body>
+    <header><% include ../_header %></header>
+    <nav></nav>
+    <section class="page_title">
+      <h1>Query Form</h1>
+    </section>
+    <section class="messages">
+      <% include ../_messages %>
+    </section>
+    <section class="contents">
+      <% if(!hasError){ %>
+        <form action="/user/editQuery" method="post">
+          <div class="hiddenItems">
+            <input type="text" name="groupcode" value="<%=groupcode  %>">
+            <input type="text" name="threadnumber" value="<%=threadnumber  %>">
+            <input type="text" name="sequence" value="<%=sequence  %>">
+            <input type="text" name="type" value="<%=type  %>">
+          </div>
+          <header>
+            <input type="text" name="created" value="<%=created %>">
+            <input type="text" name="updated" value="<%=updated %>">
+          </header>
+          <label for="subject">Subject:</label>
+          <input type="text" name="subject" value=<%=subject%>>
+          <br>
+          <label for="content">Content:</label>
+          <textarea name="content"><%=content %></textarea>
+          <input type="submit" value="submit">
+        </form>
+      <% } %>
+    </section>
+    <footer></footer>
+  </body>
+</html>

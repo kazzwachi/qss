@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>TopPage</title>
+  </head>
+  <body>
+    <header><% include _header %></header>
+    <nav></nav>
+    <section class="page_title">
+      <h1>TopPage</h1>
+    </section>
+    <section class="messages">
+      <% include _messages %>
+    </section>
+    <section class="contents">
+      <%if(typeof username === 'undefined'){%>
+      <a href="/login">login</a>
+      <% }else{%>
+      <a href="/logout">logout</a>
+      <% }%>
+    </section>
+    <footer></footer>
+  </body>
+</html>
