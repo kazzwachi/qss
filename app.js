@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
   secret:'swordfishmeguro',
   cookie:{maxAge: 60000},
-  store: session.MemotyStore,
+  store: session.Memorystore,
   resave: true,
   saveUninitialized: false
 }));
